@@ -3,6 +3,7 @@
 #include "ObjectManager.h"
 #include "SceneManager.h"
 #include "Loading.h"
+#include "Controller.h"
 
 Game::Game()
 {
@@ -26,6 +27,7 @@ void Game::Init(int argc,char **argv)
 
 void Game::Update()
 {
+	Controller controller;
 
 }
 
