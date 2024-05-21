@@ -16,17 +16,17 @@ Controller::~Controller()
 
 void Controller::Init()
 {
-	glutKeyboardFunc(Controller::keyboard);
+	Keyboard kb;
+	kb.Init();
 
+	Mouse ms;
 }
 
-void Controller::keyboard(unsigned char key,int x,int y)
+void Controller::keyboard()
 {
-	Keyboard kb;
 	
 }
 
 void Controller::mouse()
 {
-	Mouse ms;
 }

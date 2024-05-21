@@ -23,6 +23,9 @@ void Game::Init(int argc,char **argv)
 	
 	Loading load;
 	load.LoadingPicture();
+
+	Controller controller;
+	controller.Init();
 }
 
 void Game::Update()
@@ -33,5 +36,8 @@ void Game::Update()
 
 void Game::Draw()
 {
+	SceneManager sceneManager;
+	sceneManager.Draw();
 
+	glutMainLoop();
 }

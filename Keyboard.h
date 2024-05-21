@@ -8,8 +8,10 @@ public:
     Keyboard();
     ~Keyboard();
 
-    void kbDown();
-    void kbUp();
+    void Init();
+
+    static void kbDown(unsigned char, int, int);
+    static void kbUp(unsigned char, int, int);
 
     void spe_kbDown();
     void spe_kbUp();

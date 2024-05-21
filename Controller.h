@@ -8,7 +8,7 @@ public:
     ~Controller();
     void Init();
 
-    static void keyboard(unsigned char, int, int);
+    void keyboard();
 
     void mouse();
 

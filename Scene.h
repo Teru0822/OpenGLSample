@@ -14,6 +14,6 @@ public:
 	void Init();
 	void translateLookingPos(double x,double y,double z);
 	void Update();
-
+	void Draw() ;
 };
 

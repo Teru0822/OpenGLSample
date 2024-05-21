@@ -2,8 +2,6 @@
 
 #include "Scene.h"
 
-#define WINDOW_WIDTH 1980
-#define WINDOW_HEIGHT 1080
 
 SceneManager::SceneManager()
 {
@@ -29,5 +27,6 @@ void SceneManager::Update()
 
 void SceneManager::Draw()
 {
-
+	Scene scene;
+	scene.Draw();
 }
