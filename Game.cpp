@@ -18,6 +18,7 @@ Game::~Game()
 void Game::Init(int argc,char **argv)
 {
 	glutInit(&argc,argv);
+
 	SceneManager sceneManager;
 	sceneManager.Init();
 	
@@ -31,7 +32,6 @@ void Game::Init(int argc,char **argv)
 void Game::Update()
 {
 	Controller controller;
-
 }
 
 void Game::Draw()

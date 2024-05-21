@@ -13,7 +13,7 @@ public:
 	void addPicturePass(std::string &filePass);
 	void LoadingPicture();
 	void LoadingMaps();
-
+	void LoadingVertex();
 
 
 protected:

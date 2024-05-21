@@ -42,3 +42,8 @@ void Loading::LoadingPicture()
 {
 
 }
+
+void Loading::LoadingVertex()
+{
+
+}

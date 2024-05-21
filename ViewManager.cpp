@@ -25,6 +25,9 @@ void ViewManager::View()
 	glDisable(GL_DEPTH_TEST);
 
 	//view2();
+
+
+	glutSwapBuffers();
 }
 
 void ViewManager::view1(int x,int y,int w,int h)
