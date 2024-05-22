@@ -12,6 +12,11 @@ Keyboard::~Keyboard()
 
 void Keyboard::Init()
 {
+
+}
+
+void Keyboard::BindCallBackFunc()
+{
 	glutKeyboardFunc(Keyboard::kbDown);
 	glutKeyboardUpFunc(Keyboard::kbUp);
 

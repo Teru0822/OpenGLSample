@@ -24,6 +24,7 @@ void Game::Init(int argc,char **argv)
 	
 	Loading load;
 	load.LoadingPicture();
+	load.LoadingVFI();
 
 	Controller controller;
 	controller.Init();
@@ -40,4 +41,15 @@ void Game::Draw()
 	sceneManager.Draw();
 
 	glutMainLoop();
+}
+
+void Game::BindCallBackFunc()
+{
+	SceneManager sceneManager;
+	sceneManager.BindCallBackFunc();
+
+	Controller controller;
+	controller.BindCallBackFunc();
+
+
 }

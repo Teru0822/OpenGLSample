@@ -1,12 +1,11 @@
 #pragma once
-#include "Scene.h"
+#include "SceneManager.h"
 
-class ViewManager : public Scene
+class ViewManager : public SceneManager
 {
 public:
 	static void View();
 
-	static void view1(int, int, int, int);
 	//void view2(int, int, int, int);
 
 };

@@ -9,7 +9,7 @@ public:
     ~Keyboard();
 
     void Init();
-
+    void BindCallBackFunc() override;
     static void kbDown(unsigned char, int, int);
     static void kbUp(unsigned char, int, int);
 

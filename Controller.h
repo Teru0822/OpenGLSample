@@ -7,9 +7,9 @@ public:
     Controller();
     ~Controller();
     void Init();
-
+    void BindCallBackFunc() override;
     void keyboard();
-
+    
     void mouse();
 
 

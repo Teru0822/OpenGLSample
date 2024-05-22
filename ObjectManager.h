@@ -1,5 +1,5 @@
 #pragma once
-#include "SceneManager.h"
+#include "Game.h"
 #define ARRAY_MAX 10000000
 
 class ObjectManager : public Game

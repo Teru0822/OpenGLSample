@@ -16,8 +16,13 @@ Controller::~Controller()
 
 void Controller::Init()
 {
+
+}
+
+void Controller::BindCallBackFunc()
+{
 	Keyboard kb;
-	kb.Init();
+	kb.BindCallBackFunc();
 
 	Mouse ms;
 }
