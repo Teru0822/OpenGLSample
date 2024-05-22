@@ -8,22 +8,26 @@ void Object::brickTile(float r, float g, float b, GLuint textureID)
     glBindTexture(GL_TEXTURE_2D, textureID);
     glEnable(GL_TEXTURE_2D);
 
-    glNormalPointer(GL_FLOAT, 0, rengaTile::flat);
+    glNormalPointer(GL_FLOAT, 0, load.brick.flat.data());
     glColor3f(r, g, b);
-
-    for (int i = 0; i < rengaTile::indexSize; i++)
+    auto flatIt = load.brick.flat.begin();
+    auto vertexIt = load.brick.vertex.begin();
+    for (int i = 0; i < load.brick.indexSize; i++)
     {
         glBegin(GL_QUADS);
-        glNormal3f(rengaTile::flat[i * 3], rengaTile::flat[i * 3 + 1], rengaTile::flat[i * 3 + 2]);
+        glNormal3f(*flatIt, *flatIt + 1, *flatIt + 2);
         glTexCoord2d(0.0, 1.0);
-        glVertex3f(rengaTile::sortedVertex[i * 12], rengaTile::sortedVertex[i * 12 + 1], rengaTile::sortedVertex[i * 12 + 2]);
+        glVertex3f(*vertexIt,*vertexIt+1,*vertexIt+2);
         glTexCoord2d(1.0, 1.0);
-        glVertex3f(rengaTile::sortedVertex[i * 12 + 3], rengaTile::sortedVertex[i * 12 + 4], rengaTile::sortedVertex[i * 12 + 5]);
+        glVertex3f(*vertexIt+3, *vertexIt+4, *vertexIt+5);
         glTexCoord2d(1.0, 0.0);
-        glVertex3f(rengaTile::sortedVertex[i * 12 + 6], rengaTile::sortedVertex[i * 12 + 7], rengaTile::sortedVertex[i * 12 + 8]);
+        glVertex3f(*vertexIt+6, *vertexIt+7, *vertexIt+8);
         glTexCoord2d(0.0, 0.0);
-        glVertex3f(rengaTile::sortedVertex[i * 12 + 9], rengaTile::sortedVertex[i * 12 + 10], rengaTile::sortedVertex[i * 12 + 11]);
+        glVertex3f(*vertexIt+9, *vertexIt+10, *vertexIt+11);
         glEnd();
+        flatIt++;
+        vertexIt += 12;
+
     }
     glBindTexture(GL_TEXTURE_2D, 0);
     glDisable(GL_TEXTURE_2D);

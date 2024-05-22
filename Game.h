@@ -6,6 +6,8 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <omp.h>
+
 
 class Game
 {

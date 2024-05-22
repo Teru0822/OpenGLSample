@@ -1,5 +1,7 @@
 #include "Loading.h"
 
+
+
 Loading::Loading()
 {
 }
@@ -81,6 +83,9 @@ void Loading::adjustVFI(string v,string f,string i,Objects& obj)
 			}
 		}
 		auto it = obj.index.begin();
+
+		//‚±‚±‚â‚Î‚¢
+#pragma omp parallel for
 		for (int i = 0; i < obj.indexSize * 4; i++)
 		{
 			auto vertexIt = vertex.begin();
