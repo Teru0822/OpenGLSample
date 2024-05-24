@@ -9,7 +9,7 @@ private:
 public:
 	ObjectManager();
 	~ObjectManager();
-	void Init();
+	virtual void Init();
 	void Update();
 	void Draw();
 };

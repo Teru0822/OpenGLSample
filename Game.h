@@ -8,7 +8,6 @@
 #include <vector>
 #include <omp.h>
 
-
 class Game
 {
 private:
@@ -25,7 +24,7 @@ public:
 	};
 
 	virtual void BindCallBackFunc();
-	void Init(int argc, char** argv);
+	virtual void Init(int argc, char** argv);
 	void Update();	
 	void Draw();
 

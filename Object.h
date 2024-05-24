@@ -6,12 +6,10 @@
 class Object : public ObjectManager
 {
 private:
-	Loading load;
 
 public:
-
-
-	void brickTile(float,float,float,GLuint);
+	static GLuint loadTexture(const char* path);
+	static void brickTile(float,float,float);
 protected:
 
 

@@ -12,7 +12,7 @@ public:
 	SceneManager();
 	~SceneManager();
 
-	void Init();
+	virtual void Init();
 	void Update();
 	void Draw();
 	void BindCallBackFunc() override;

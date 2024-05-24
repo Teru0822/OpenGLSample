@@ -24,7 +24,7 @@ void Game::Init(int argc,char **argv)
 	
 	Loading load;
 	load.LoadingPicture();
-	load.LoadingVFI();
+	//load.LoadingVFI();
 
 	Controller controller;
 	controller.Init();

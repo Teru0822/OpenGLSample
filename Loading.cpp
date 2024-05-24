@@ -23,11 +23,14 @@ void Loading::LoadingPicture()
 
 void Loading::LoadingVFI()
 {
-	adjustVFI("vBrickTile.txt","fBrickTile.txt","iBrickTile.txt", this->brick);
+	//this->brick = Loading::adjustVFI("vBrickTile.txt", "fBrickTile.txt", "iBrickTile.txt");
+
 }
 
-void Loading::adjustVFI(string v,string f,string i,Objects& obj)
+Objects Loading::adjustVFI(string v,string f,string i)
 {
+	Objects obj;
+
 	ifstream readV(v),readF(f),readI(i);
 	if (readV.is_open() && readF.is_open() && readI.is_open())
 	{
@@ -90,9 +93,10 @@ void Loading::adjustVFI(string v,string f,string i,Objects& obj)
 		{
 			auto vertexIt = vertex.begin();
 			std::advance(vertexIt, *it * 3);
-			obj.vertex.push_back(*vertexIt++);
-			obj.vertex.push_back(*vertexIt++);
-			obj.vertex.push_back(*vertexIt++);
+			obj.vertex[i * 3] = *vertexIt++;
+			obj.vertex[(i * 3) + 1] = *vertexIt++; 
+			obj.vertex[(i * 3) + 2] = *vertexIt++;
+
 			++it;	
 		}
 	}
@@ -100,5 +104,5 @@ void Loading::adjustVFI(string v,string f,string i,Objects& obj)
 	{
 		std::cerr << "error" << std::endl;
 	}
-
+	return obj;
 }

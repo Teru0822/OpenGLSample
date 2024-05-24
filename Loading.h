@@ -6,7 +6,9 @@ using namespace std;
 struct Objects
 {
 	vector<GLfloat> flat;//頂点座標を格納
-	vector<GLfloat> vertex;
+
+	//オーバーフローの原因
+	GLfloat vertex[ARRAY_MAX];
 	list<int> index;
 	int indexSize = 0;
 };
@@ -16,19 +18,17 @@ class Loading :public ObjectManager
 {
 private:
 	std::list<std::string> filePassList;
+	Objects brick;
 
 public:
 	Loading();
 	~Loading();
 
-	Objects brick;
 	void addPicturePass(std::string &filePass);
 	void LoadingPicture();
-	void LoadingMaps();
 	void LoadingVFI();
-
 	
-    void adjustVFI(string,string,string,Objects&);
+    Objects adjustVFI(string,string,string);
 
 protected:
 

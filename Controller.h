@@ -6,7 +6,7 @@ class Controller :
 public:
     Controller();
     ~Controller();
-    void Init();
+    virtual void Init();
     void BindCallBackFunc() override;
     void keyboard();
     
