@@ -2,7 +2,7 @@
 #include "Game.h"
 #define ARRAY_MAX 10000000
 
-class ObjectManager : public Game
+class ObjectManager
 {
 private:
 

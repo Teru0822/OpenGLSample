@@ -13,6 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\screen">
+      <UniqueIdentifier>{9b0645b4-be9c-4499-8f5b-4b9968d4a517}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\object">
+      <UniqueIdentifier>{29fd26e9-ed2d-47c4-a2e6-b9050c731edb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\controller">
+      <UniqueIdentifier>{196cb0fd-5bbe-4e4a-a707-b5d94c321c2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\load">
+      <UniqueIdentifier>{7d01a094-f00f-4fea-a1fe-2b7c4b0560c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\controller">
+      <UniqueIdentifier>{af46d7a3-313b-4c1d-92bb-074040cfb11a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\object">
+      <UniqueIdentifier>{ca01922b-ac46-4351-b2cd-560a4a964b1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\screen">
+      <UniqueIdentifier>{4190cf4b-039f-46a3-b91d-2235ce0800e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\load">
+      <UniqueIdentifier>{41830520-1624-4573-a36c-5aaf52664648}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -22,69 +46,69 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="GameScene.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjectManager.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Model.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Controller.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Keyboard.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Mouse.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\screen</Filter>
     </ClCompile>
     <ClCompile Include="view1.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\screen</Filter>
     </ClCompile>
     <ClCompile Include="ViewManager.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>ソース ファイル\object</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>ソース ファイル\object</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>ソース ファイル\controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>ソース ファイル\controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>ソース ファイル\controller</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>ソース ファイル\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>ソース ファイル\load</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameScene.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjectManager.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Model.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Controller.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\controller</Filter>
     </ClInclude>
     <ClInclude Include="Keyboard.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\controller</Filter>
     </ClInclude>
     <ClInclude Include="Mouse.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\controller</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>ヘッダー ファイル\object</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>ヘッダー ファイル\object</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>ヘッダー ファイル\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>ヘッダー ファイル\screen</Filter>
     </ClInclude>
     <ClInclude Include="view1.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\screen</Filter>
     </ClInclude>
     <ClInclude Include="ViewManager.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>ヘッダー ファイル\load</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

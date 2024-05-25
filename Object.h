@@ -1,9 +1,9 @@
 #pragma once
 #include "ObjectManager.h"
-#include "Loading.h"
+#include "Model.h"
 
 
-class Object : public ObjectManager
+class Object : public Game
 {
 private:
 

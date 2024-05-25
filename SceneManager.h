@@ -4,7 +4,7 @@
 #define WINDOW_HEIGHT 1080
 
 
-class SceneManager : public Game
+class SceneManager
 {
 private:
 
