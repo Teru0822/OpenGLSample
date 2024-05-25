@@ -131,7 +131,7 @@
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Keyboard.cpp" />
-    <ClCompile Include="Loading.cpp" />
+    <ClCompile Include="Model.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="view1.cpp" />
     <ClCompile Include="ViewManager.cpp" />
@@ -145,7 +145,7 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Keyboard.h" />
-    <ClInclude Include="Loading.h" />
+    <ClInclude Include="Model.h" />
     <ClInclude Include="view1.h" />
     <ClInclude Include="ViewManager.h" />
     <ClInclude Include="Mouse.h" />

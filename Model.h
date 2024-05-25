@@ -8,21 +8,21 @@ struct Objects
 	vector<GLfloat> flat;//頂点座標を格納
 
 	//オーバーフローの原因
-	GLfloat vertex[ARRAY_MAX];
+	list<GLuint> vertex;
 	list<int> index;
 	int indexSize = 0;
 };
 
 
-class Loading :public ObjectManager
+class Model :public ObjectManager
 {
 private:
 	std::list<std::string> filePassList;
 	Objects brick;
 
 public:
-	Loading();
-	~Loading();
+	Model();
+	~Model();
 
 	void addPicturePass(std::string &filePass);
 	void LoadingPicture();

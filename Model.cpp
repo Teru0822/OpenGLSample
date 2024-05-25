@@ -1,33 +1,34 @@
-#include "Loading.h"
+#include "Model.h"
 
 
 
-Loading::Loading()
-{
-}
-
-Loading::~Loading()
+Model::Model()
 {
 
 }
 
-void Loading::addPicturePass(std::string &filePass)
+Model::~Model()
+{
+
+}
+
+void Model::addPicturePass(std::string &filePass)
 {
 	filePassList.push_back(filePass);
 }
 
-void Loading::LoadingPicture()
+void Model::LoadingPicture()
 {
 
 }
 
-void Loading::LoadingVFI()
+void Model::LoadingVFI()
 {
 	//this->brick = Loading::adjustVFI("vBrickTile.txt", "fBrickTile.txt", "iBrickTile.txt");
 
 }
 
-Objects Loading::adjustVFI(string v,string f,string i)
+Objects Model::adjustVFI(string v,string f,string i)
 {
 	Objects obj;
 
@@ -88,13 +89,12 @@ Objects Loading::adjustVFI(string v,string f,string i)
 		auto it = obj.index.begin();
 
 		//‚±‚±‚â‚Î‚¢
-#pragma omp parallel for
 		for (int i = 0; i < obj.indexSize * 4; i++)
 		{
 			auto vertexIt = vertex.begin();
 			std::advance(vertexIt, *it * 3);
-			obj.vertex[i * 3] = *vertexIt++;
-			obj.vertex[(i * 3) + 1] = *vertexIt++; 
+			obj.vertex.push_back()[i * 3] = *vertexIt++;
+			obj.vertex[(i * 3) + 1] = *vertexIt++;
 			obj.vertex[(i * 3) + 2] = *vertexIt++;
 
 			++it;	

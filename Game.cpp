@@ -2,7 +2,7 @@
 
 #include "ObjectManager.h"
 #include "SceneManager.h"
-#include "Loading.h"
+#include "Model.h"
 #include "Controller.h"
 
 Game::Game()
@@ -22,7 +22,7 @@ void Game::Init(int argc,char **argv)
 	SceneManager sceneManager;
 	sceneManager.Init();
 	
-	Loading load;
+	Model load;
 	load.LoadingPicture();
 	//load.LoadingVFI();
 
