@@ -9,7 +9,7 @@ private:
 
 public:
 	static GLuint loadTexture(const char* path);
-	static void brickTile(float,float,float);
+	//static void brickTile(float,float,float);
 protected:
 
 

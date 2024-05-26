@@ -16,6 +16,6 @@ void view1::view(int x, int y, int w, int h)
 	glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
 
 
-	Object::brickTile(1,1,1);
+	//Object::brickTile(1,1,1);
 
 }

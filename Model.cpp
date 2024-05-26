@@ -24,85 +24,38 @@ void Model::LoadingPicture()
 
 void Model::LoadingVFI()
 {
-	//this->brick = Loading::adjustVFI("vBrickTile.txt", "fBrickTile.txt", "iBrickTile.txt");
+	this->brick = Model::adjustVFI("Sample.obj");
 
 }
 
-Objects Model::adjustVFI(string v,string f,string i)
+Objects Model::adjustVFI(const char* filePass)
 {
+	char str[256];
 	Objects obj;
-
-	ifstream readV(v),readF(f),readI(i);
-	if (readV.is_open() && readF.is_open() && readI.is_open())
+	point p;
+	FILE* file;
+	file = fopen(filePass, "rt");
+	while (1)
 	{
-		list<GLfloat> vertex;
+		fscanf(file, "%s", str);
 
-		string v_line;
-		while (getline(readV, v_line))
+		if (feof(file) != 0)
+			break;
+		if (strcmp(str, "v") == 0)
 		{
-			string token;
-			istringstream iss(v_line);		
-			float x, y, z;
-
-			if (iss >> x && iss.ignore(1, ',') >> y && iss.ignore(1, ',') >> z) {
-				vertex.push_back(x);
-				vertex.push_back(y);
-				vertex.push_back(z);
-			}
-			else {
-				std::cerr << "Failed to parse line " << std::endl;
-			}
+			fscanf(file, "%f", p.x);
+			fscanf(file, "%f", p.y);
+			fscanf(file, "%f", p.z);
+			obj.vertex.push_back(p);
 		}
-		string f_line;
-		while (getline(readF, f_line))
+		else if (strcmp(str, "vn") == 0)
 		{
-			string token;
-			istringstream iss(f_line);
-			float x, y, z;
-
-			if (iss >> x && iss.ignore(1, ',') >> y && iss.ignore(1, ',') >> z) {
-				obj.flat.push_back(x);
-				obj.flat.push_back(y);
-				obj.flat.push_back(z);
-			}
-			else {
-				std::cerr << "Failed to parse line " << std::endl;
-			}
-		}
-		string i_line;
-		while (getline(readI, i_line))
-		{
-			string token;
-			istringstream iss(i_line);
-			int a, b, c,d;
-			if (iss >> a && iss.ignore(1, ',') >> b && iss.ignore(1, ',') >> c && iss.ignore(1,',') >> d) {
-				obj.index.push_back(a);
-				obj.index.push_back(b);
-				obj.index.push_back(c);
-				obj.index.push_back(d);
-				obj.indexSize++;
-			}
-			else {
-				std::cerr << "Failed to parse line " << std::endl;
-			}
-		}
-		auto it = obj.index.begin();
-
-		//‚±‚±‚â‚Î‚¢
-		for (int i = 0; i < obj.indexSize * 4; i++)
-		{
-			auto vertexIt = vertex.begin();
-			std::advance(vertexIt, *it * 3);
-			obj.vertex.push_back()[i * 3] = *vertexIt++;
-			obj.vertex[(i * 3) + 1] = *vertexIt++;
-			obj.vertex[(i * 3) + 2] = *vertexIt++;
-
-			++it;	
+			fscanf(file, "%f", p.x);
+			fscanf(file, "%f", p.y);
+			fscanf(file, "%f", p.z);
+			obj.flat.push_back(p);
 		}
 	}
-	else
-	{
-		std::cerr << "error" << std::endl;
-	}
+
 	return obj;
 }

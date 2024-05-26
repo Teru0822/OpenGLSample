@@ -20,14 +20,12 @@ void Game::Init(int argc,char **argv)
 	glutInit(&argc,argv);
 
 	SceneManager sceneManager;
-	sceneManager.Init();
+	sceneManager.create("Sample");
 	
-	Model load;
-	load.LoadingPicture();
-	//load.LoadingVFI();
+	Model model;
+	model.LoadingVFI();
+	model.LoadingPicture();
 
-	Controller controller;
-	controller.Init();
 }
 
 void Game::Update()
@@ -38,9 +36,11 @@ void Game::Update()
 void Game::Draw()
 {
 	SceneManager sceneManager;
-	sceneManager.Draw();
+	sceneManager.Init();
 
 	glutMainLoop();
+
+	sceneManager.Uninit();
 }
 
 void Game::BindCallBackFunc()

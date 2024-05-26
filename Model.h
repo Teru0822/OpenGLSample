@@ -1,14 +1,23 @@
 #pragma once
 #include "ObjectManager.h"
 
+
 using namespace std;
+
+struct point
+{
+	double x;
+	double y;
+	double z;
+};
 
 struct Objects
 {
-	vector<GLfloat> flat;//頂点座標を格納
+	vector<point> flat;//頂点座標を格納
+	vector<point> vertex;
+	
 
 	//オーバーフローの原因
-	list<GLuint> vertex;
 	list<int> index;
 	int indexSize = 0;
 };
@@ -28,7 +37,7 @@ public:
 	void LoadingPicture();
 	void LoadingVFI();
 	
-    Objects adjustVFI(string,string,string);
+    Objects adjustVFI(const char*);
 
 protected:
 

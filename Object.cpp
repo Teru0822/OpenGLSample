@@ -3,43 +3,43 @@
 #include "stb_image.h"
 
 
-void Object::brickTile(float r, float g, float b)
-{
-    Loading load;
-    //Objects brick = load.adjustVFI("vBrickTile.txt", "fBrickTile.txt", "iBrickTile.txt");
-
-    Objects brick;
-    const char* imagePath = "brick.png";
-    GLuint textureID = Object::loadTexture(imagePath);
-    glEnableClientState(GL_VERTEX_ARRAY);//vertex_arrayŽg‚¢‚½‚¢‚È‚ç“ü‚ê‚é
-    glEnableClientState(GL_NORMAL_ARRAY);
-    glVertexPointer(4, GL_FLOAT, 0, brick.vertex);
-    glBindTexture(GL_TEXTURE_2D, textureID);
-    glEnable(GL_TEXTURE_2D);
-
-    glNormalPointer(GL_FLOAT, 0, brick.flat.data());
-    glColor3f(r, g, b);
-    auto flatIt = brick.flat.begin();
-    for (int i = 0; i < brick.indexSize; i++)
-    {
-        glBegin(GL_QUADS);
-        glNormal3f(*flatIt, *flatIt + 1, *flatIt + 2);
-        glTexCoord2d(0.0, 1.0);
-        glVertex3f(brick.vertex[i * 12], brick.vertex[i * 12 + 1], brick.vertex[i * 12 + 2]);
-        glTexCoord2d(1.0, 1.0);
-        glVertex3f(brick.vertex[i * 12 + 3], brick.vertex[i * 12 + 4], brick.vertex[i * 12 + 5]);
-        glTexCoord2d(1.0, 0.0);
-        glVertex3f(brick.vertex[i * 12 + 6], brick.vertex[i * 12 + 7], brick.vertex[i * 12 + 8]);
-        glTexCoord2d(0.0, 0.0);
-        glVertex3f(brick.vertex[i * 12 + 9], brick.vertex[i * 12 + 10],brick.vertex[i * 12 + 11]);
-        glEnd();
-        flatIt++;
-    }
-    glBindTexture(GL_TEXTURE_2D, 0);
-    glDisable(GL_TEXTURE_2D);
-
-	
-}
+//void Object::brickTile(float r, float g, float b)
+//{
+//    Model load;
+//    //Objects brick = load.adjustVFI("vBrickTile.txt", "fBrickTile.txt", "iBrickTile.txt");
+//
+//    Objects brick;
+//    const char* imagePath = "brick.png";
+//    GLuint textureID = Object::loadTexture(imagePath);
+//    glEnableClientState(GL_VERTEX_ARRAY);//vertex_arrayŽg‚¢‚½‚¢‚È‚ç“ü‚ê‚é
+//    glEnableClientState(GL_NORMAL_ARRAY);
+//    glVertexPointer(4, GL_FLOAT, 0, brick.vertex);
+//    glBindTexture(GL_TEXTURE_2D, textureID);
+//    glEnable(GL_TEXTURE_2D);
+//
+//    glNormalPointer(GL_FLOAT, 0, brick.flat.data());
+//    glColor3f(r, g, b);
+//    auto flatIt = brick.flat.begin();
+//    for (int i = 0; i < brick.indexSize; i++)
+//    {
+//        glBegin(GL_QUADS);
+//        glNormal3f(*flatIt, *flatIt + 1, *flatIt + 2);
+//        glTexCoord2d(0.0, 1.0);
+//        glVertex3f(brick.vertex[i * 12], brick.vertex[i * 12 + 1], brick.vertex[i * 12 + 2]);
+//        glTexCoord2d(1.0, 1.0);
+//        glVertex3f(brick.vertex[i * 12 + 3], brick.vertex[i * 12 + 4], brick.vertex[i * 12 + 5]);
+//        glTexCoord2d(1.0, 0.0);
+//        glVertex3f(brick.vertex[i * 12 + 6], brick.vertex[i * 12 + 7], brick.vertex[i * 12 + 8]);
+//        glTexCoord2d(0.0, 0.0);
+//        glVertex3f(brick.vertex[i * 12 + 9], brick.vertex[i * 12 + 10],brick.vertex[i * 12 + 11]);
+//        glEnd();
+//        flatIt++;
+//    }
+//    glBindTexture(GL_TEXTURE_2D, 0);
+//    glDisable(GL_TEXTURE_2D);
+//
+//	
+//}
 
 GLuint Object::loadTexture(const char* path) {
     GLuint textureID;

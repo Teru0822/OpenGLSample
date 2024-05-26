@@ -3,6 +3,7 @@
 #define WINDOW_WIDTH 1980
 #define WINDOW_HEIGHT 1080
 
+#include "string"
 
 class SceneManager
 {
@@ -12,10 +13,15 @@ public:
 	SceneManager();
 	~SceneManager();
 
-	virtual void Init();
+	void create(std::string windowName);
 	void Update();
 	void Draw();
-	void BindCallBackFunc() override;
+	void BindCallBackFunc();
+	void Init();
+	void Uninit();
+
+
+
 
 protected:
 
