@@ -24,7 +24,7 @@ void Model::LoadingPicture()
 
 void Model::LoadingVFI()
 {
-	this->brick = Model::adjustVFI("Sample.obj");
+	this->weapon = Model::adjustVFI("Sample.obj");
 
 }
 
@@ -34,25 +34,25 @@ Objects Model::adjustVFI(const char* filePass)
 	Objects obj;
 	point p;
 	FILE* file;
-	file = fopen(filePass, "rt");
+	fopen_s(&file,filePass,"r");
 	while (1)
 	{
-		fscanf(file, "%s", str);
+		fscanf_s(file, "%s", str);
 
 		if (feof(file) != 0)
 			break;
 		if (strcmp(str, "v") == 0)
 		{
-			fscanf(file, "%f", p.x);
-			fscanf(file, "%f", p.y);
-			fscanf(file, "%f", p.z);
+			fscanf_s(file, "%f", p.x);
+			fscanf_s(file, "%f", p.y);
+			fscanf_s(file, "%f", p.z);
 			obj.vertex.push_back(p);
 		}
 		else if (strcmp(str, "vn") == 0)
 		{
-			fscanf(file, "%f", p.x);
-			fscanf(file, "%f", p.y);
-			fscanf(file, "%f", p.z);
+			fscanf_s(file, "%f", p.x);
+			fscanf_s(file, "%f", p.y);
+			fscanf_s(file, "%f", p.z);
 			obj.flat.push_back(p);
 		}
 	}

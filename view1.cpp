@@ -15,7 +15,9 @@ void view1::view(int x, int y, int w, int h)
 	glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
 	glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
 
+	//Model model;
+	//Objects weapon = model.weapon;
 
-	//Object::brickTile(1,1,1);
+	//Object::makeObj(weapon,0.4,0.5,0.5);
 
 }

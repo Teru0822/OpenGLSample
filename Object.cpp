@@ -2,7 +2,6 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-
 //void Object::brickTile(float r, float g, float b)
 //{
 //    Model load;
@@ -40,6 +39,25 @@
 //
 //	
 //}
+
+void Object::makeObj(Objects obj, float r, float g, float b)
+{
+    glEnableClientState(GL_VERTEX_ARRAY);//vertex_arrayŽg‚¢‚½‚¢‚È‚ç“ü‚ê‚é
+    glEnableClientState(GL_NORMAL_ARRAY);
+    glVertexPointer(4, GL_FLOAT, 0, obj.vertex.data());
+    glNormalPointer(GL_FLOAT, 0, obj.flat.data());
+    glColor3f(r, g, b);
+    for (int i = 0; i < obj.vertex.size(); i++)
+    {
+        glBegin(GL_QUADS);
+        glNormal3f(obj.flat.data()[i].x, obj.flat.data()[i].y, obj.flat.data()[i].z);
+        glVertex3f(obj.vertex.data()[i * 4].x, obj.vertex.data()[i * 4].y, obj.vertex.data()[i * 4].z);
+        glVertex3f(obj.vertex.data()[(i * 4) + 1].x, obj.vertex.data()[(i * 4) + 1].y, obj.vertex.data()[(i * 4) + 1].z);
+        glVertex3f(obj.vertex.data()[(i * 4) + 2].x, obj.vertex.data()[(i * 4) + 2].y, obj.vertex.data()[(i * 4) + 2].z);
+        glVertex3f(obj.vertex.data()[(i * 4) + 3].x, obj.vertex.data()[(i * 4) + 3].y, obj.vertex.data()[(i * 4) + 3].z);
+        glEnd();
+    }
+}
 
 GLuint Object::loadTexture(const char* path) {
     GLuint textureID;

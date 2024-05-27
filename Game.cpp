@@ -24,7 +24,7 @@ void Game::Init(int argc,char **argv)
 	
 	Model model;
 	model.LoadingVFI();
-	model.LoadingPicture();
+	//model.LoadingPicture();
 
 }
 
